@@ -1,95 +1,205 @@
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/TzDKD5h9)
 ![School of Solana](https://github.com/Ackee-Blockchain/school-of-solana/blob/master/.banner/banner.png?raw=true)
 
-## 📚Solana Program
-We are about halfway through the course, and you already have some experience with programming on Solana. It is time to create something on your own! You will be building a dApp that will serve as the culmination of everything you have learned so far. Feel free to implement whatever comes to your mind, (as long as it passes the requirements).
+# 🗳️ Solana Polling dApp
 
-**This does not mean that the School of Solana is coming to an end just yet!** There are still several exciting lectures ahead, as well as one security related task.
+A decentralized polling system built on Solana blockchain using Anchor framework. Create polls, vote transparently, and prevent double voting through secure Program Derived Addresses (PDAs).
 
-### Task details
-This task consists of two parts:
-1. **Core of your dApp**
-    - A deployed Solana program.
-2. **Frontend**
-    - A simple frontend to interact with the dApp.
+## 🎯 Project Overview
 
-### Requirements
-- An Anchor program deployed on **Devnet** or **Mainnet**.
-- The Anchor program must use a PDA (Program Derived Address).
-- At least one TypeScript **test** for each Anchor program instruction. These tests should cover both **happy** and **unhappy** (intentional error-triggering) scenarios.
-- A simple **frontend** deployed using your preferred provider (for more info, check below).
-- A filled out **PROJECT_DESCRIPTION.md** file.
+This dApp allows users to:
+- Create custom polls with multiple-choice options
+- Vote on polls (one vote per user, enforced on-chain)
+- View real-time voting results with percentages
+- Ensure transparency and immutability of all votes
 
-### Ideas
-We highly recommend starting with something simple. Take time to think through your project and work on it in iterations. Do not try to implement everything at once!
+## ✅ Task 5 Requirements Met
 
-Below is a list of few ideas to get you started:
-- **Social app**
-    - Instagram
-    - Giphy
-    - Friendtech
-    - Spotify
-- **Blog**
-- **Voting** ([D21 - Janeček method](https://www.ih21.org/en/guidelines))
-- **DeFi**
-    - Raffles
-    - Escrow
-    - Tipping
-    - Lending ([Save Documentation](https://docs.save.finance/))
-    - Liquid Staking ([Marinade Documentation](https://docs.marinade.finance/))
-    - Data Query with Pyth ([Pyth Documentation](https://docs.pyth.network/price-feeds))
-    - AMM ([Raydium Documentation](https://raydium.gitbook.io/raydium/))
-- **Gaming**
-    - Browser Game ([Gaming on Solana](https://solanacookbook.com/gaming/nfts-in-games.html#nfts-in-games))
+- ✅ Anchor program deployed on Devnet
+- ✅ PDAs used for Poll and VoterRecord accounts
+- ✅ Comprehensive TypeScript tests (happy + unhappy paths)
+- ✅ React frontend with wallet integration
+- ✅ Complete PROJECT_DESCRIPTION.md
 
-### Deadline
-The deadline for this task is **Wednesday, November 19th, at 23:59 UTC**.
->[!CAUTION]
->Note that we will not accept submissions after the deadline.
+## 📁 Project Structure
 
-### Submission
-There are two folders, one for the Anchor project, and one for the frontend. Push your changes to the **main** branch of **this** repository.
+```
+├── anchor_project/           # Solana program (Anchor)
+│   ├── programs/
+│   │   └── polling_dapp/
+│   │       └── src/
+│   │           └── lib.rs    # Main program code
+│   ├── tests/                # TypeScript tests
+│   └── package.json
+│
+├── frontend/                 # React frontend
+│   ├── src/
+│   │   ├── App.tsx          # Main app component
+│   │   ├── components/      # React components
+│   │   └── idl.ts           # Program IDL
+│   └── package.json
+│
+└── PROJECT_DESCRIPTION.md    # Detailed project documentation
+```
 
->[!IMPORTANT]
->It is essential that you fill out the `PROJECT_DESCRIPTION.md` template completely and accurately. This document will be used by AI for the initial evaluation, so provide detailed information about your project, including working links, clear descriptions, and technical implementation details.
+## 🚀 Quick Start
 
->[!NOTE]
->Your submission repository is public. Feel free to share the link to showcase your work!
+### Prerequisites
 
-### Evaluation
-The evaluation process is based on the **requirements**. If you meet the requirements, you pass the task!
+- [Rust](https://www.rust-lang.org/tools/install)
+- [Solana CLI](https://docs.solana.com/cli/install-solana-cli-tools)
+- [Anchor](https://www.anchor-lang.com/docs/installation) (v0.30.1)
+- [Node.js](https://nodejs.org/) (v16+)
+- [Yarn](https://yarnpkg.com/)
 
->[!NOTE]
->The first round of evaluations will be conducted by AI to verify requirements before manual review. AI can make mistakes. If you believe you fulfilled all requirements but weren't graded correctly, please create a support ticket and we will resolve the issue.
+### Anchor Program Setup
 
->[!CAUTION]
->We expect original work that demonstrates your understanding and creativity. While you may draw inspiration from examples covered in lessons and tasks, **direct copying is not acceptable**. If you choose to build upon an example from the School of Solana materials, you must significantly expand it with additional features, instructions, and functionality to showcase your learning progress. 
+```bash
+cd anchor_project
 
-### Example Workflow
-Let's say you are going to implement the Twitter dApp as the Solana Program. Here's how the steps could look:
+# Install dependencies
+yarn install
 
-**1.** Implement Twitter dApp using the Anchor framework.
+# Build the program
+anchor build
 
-**2.** Test the Twitter dApp using the Anchor framework.
+# Run tests
+anchor test
 
-**3.** Deploy the Twitter dApp on the Solana Devnet.
+# Deploy to devnet
+anchor deploy --provider.cluster devnet
+```
 
-**4.** Using the create solana dapp template, implement frontend for the Twitter dApp.
+### Frontend Setup
 
-**5.** Publish Frontend using [Vercel](https://vercel.com). Ensure the deployment is publicly accessible.
+```bash
+cd frontend
 
-**6.** Fill out the PROJECT_DESCRIPTION.md template.
+# Install dependencies
+npm install
 
-**7.** Submit the Twitter dApp using GitHub Classroom.
+# Start development server
+npm start
 
-### Useful Links
-- [Vercel](https://vercel.com)
-- [Create Solana Dapp](https://github.com/solana-foundation/create-solana-dapp)
-- [Account Macro Constraints](https://docs.rs/anchor-lang/0.31.1/anchor_lang/derive.Accounts.html)
-- [Solana Developers Courses](https://solana.com/developers/courses)
+# Build for production
+npm run build
+```
 
------
+## 🧪 Testing
 
-### Need help?
->[!TIP]
->If you have any questions, feel free to reach out to us on [Discord](https://discord.gg/z3JVuZyFnp).
+The project includes comprehensive tests covering:
+
+**Happy Paths:**
+- Creating polls successfully
+- Voting on polls
+- Multiple users voting
+
+**Unhappy Paths:**
+- Invalid poll parameters (empty question, too few/many options)
+- Double voting attempts
+- Invalid option indices
+
+Run tests:
+```bash
+cd anchor_project
+anchor test
+```
+
+## 🏗️ Architecture
+
+### Program Instructions
+
+1. **create_poll** - Creates a new poll with question and options
+   - Uses Poll PDA: `["poll", creator, poll_id]`
+   - Validates input constraints
+   
+2. **vote** - Records a vote for a poll option
+   - Creates VoterRecord PDA: `["voter", poll, voter]`
+   - Prevents double voting
+
+### Account Structures
+
+**Poll Account:**
+- poll_id, creator, question, options
+- votes (array of counts), total_votes
+- created_at timestamp, bump
+
+**VoterRecord Account:**
+- voter, poll_id, chosen_option
+- voted_at timestamp, bump
+
+## 🎨 Frontend Features
+
+- Modern, responsive UI with gradient design
+- Wallet integration (Phantom, Solflare)
+- Tab-based navigation (Create Poll / Vote)
+- Real-time vote percentages
+- Error handling and user feedback
+
+## 📝 Deployment Steps
+
+1. **Deploy Program:**
+   ```bash
+   anchor build
+   anchor deploy --provider.cluster devnet
+   ```
+
+2. **Update Frontend:**
+   - Copy deployed program ID
+   - Update `PROGRAM_ID` in `frontend/src/idl.ts`
+
+3. **Deploy Frontend:**
+   ```bash
+   cd frontend
+   npm run build
+   vercel deploy
+   ```
+
+4. **Update PROJECT_DESCRIPTION.md:**
+   - Add deployed frontend URL
+   - Verify program ID is correct
+
+## 🔐 Security Features
+
+- **Double Vote Prevention**: VoterRecord PDA ensures one vote per user per poll
+- **Input Validation**: Question (1-200 chars), Options (2-10, each 1-50 chars)
+- **Ownership**: Polls are owned by creators via PDA seeds
+- **Transparency**: All data stored on-chain and publicly viewable
+
+## 📚 Documentation
+
+See [PROJECT_DESCRIPTION.md](PROJECT_DESCRIPTION.md) for detailed information about:
+- How to use the dApp
+- Program architecture
+- PDA implementation
+- Test coverage
+- Deployment instructions
+
+## 🛠️ Technology Stack
+
+**Blockchain:**
+- Solana
+- Anchor Framework v0.30.1
+- Rust
+
+**Frontend:**
+- React 18
+- TypeScript
+- Solana Wallet Adapter
+- Solana Web3.js
+
+**Testing:**
+- Mocha/Chai
+- Anchor Test Framework
+
+## 📄 License
+
+This project is part of the School of Solana curriculum.
+
+## 👤 Author
+
+Dhruv26052005
+
+---
+
+**School of Solana - Task 5 Submission**
