@@ -158,7 +158,4 @@ pub enum PollError {
     
     #[msg("Option text must be between 1 and 50 characters")]
     InvalidOptionText,
-    
-    #[msg("Invalid option index")]
-    InvalidOptionIndex,
-}
+
