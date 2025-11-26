@@ -3,6 +3,10 @@
 
 # 🗳️ Solana Polling dApp
 
+**Live Demo:** [https://voting-neon-delta.vercel.app/](https://voting-neon-delta.vercel.app/)
+
+**Program ID:** `9m9JeSMQojXMdGLwccYVxe5vYsFci4EN8zFtq7KXvStT`
+
 A decentralized polling system built on Solana blockchain using Anchor framework. Create polls, vote transparently, and prevent double voting through secure Program Derived Addresses (PDAs).
 
 ## 🎯 Project Overview

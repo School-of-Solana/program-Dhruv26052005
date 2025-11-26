@@ -1,6 +1,6 @@
 # Project Description
 
-**Deployed Frontend URL:** [TODO: Deploy frontend to Vercel and add link here]
+**Deployed Frontend URL:** [https://voting-neon-delta.vercel.app/](https://voting-neon-delta.vercel.app/)
 
 **Solana Program ID:** `9m9JeSMQojXMdGLwccYVxe5vYsFci4EN8zFtq7KXvStT`
 
